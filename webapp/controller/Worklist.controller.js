@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"zjblessons/ControlTaskKhartanovich/model/formatter",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+	"sap/ui/model/FilterOperator",
+	"sap/m/MessageBox"
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator, MessageBox) {
 	"use strict";
 
 	return BaseController.extend("zjblessons.ControlTaskKhartanovich.controller.Worklist", {
@@ -38,6 +39,12 @@ sap.ui.define([
 			const sValue = oEvent.getParameter('newValue');
 			this._searchHandler('MaterialText', FilterOperator.Contains, sValue);
 		},
+		onShowMessage: function () {
+			// Открываем MessageBox с данными студента
+			MessageBox.alert("Khartanovich Ivan", {
+				title: "Info"
+			});
+		}
 	});
 }
 );

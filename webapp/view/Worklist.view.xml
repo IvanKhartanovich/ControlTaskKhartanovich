@@ -18,6 +18,15 @@
                         liveChange="onSearch"
                     />
                 </HBox>
+                <OverflowToolbar>
+                    <Title text="Product List" />
+                    <ToolbarSpacer />
+                    <Button
+                        text="Information"
+                        icon="sap-icon://hint"
+                        press="onShowMessage"
+                    />
+                </OverflowToolbar>
                 <table:Table
                     id="worklistTable"
                     rows="{/zjblessons_base_Materials}"
