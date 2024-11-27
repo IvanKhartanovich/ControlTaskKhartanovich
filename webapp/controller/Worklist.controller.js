@@ -55,6 +55,21 @@ sap.ui.define([
 			var oContext = oTable.getContextByIndex(iSelectedIndex);
 			var sMaterialID = oContext.getProperty("MaterialID");
 			MessageBox.information(sMaterialID);
+		},
+		onGoPress: function (oEvent) {
+			const oTable = this.byId("worklistTable");
+			const aSelectedIndices = oTable.getSelectedIndices();
+			if (aSelectedIndices.length === 0) {
+				MessageBox.warning("Please, select something.");
+				return;
+			}
+			const iSelectedIndex = aSelectedIndices[0];
+			var oContext = oTable.getContextByIndex(iSelectedIndex);
+			var sObjectId = oContext.getProperty("MaterialID");
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("object", {
+				objectId: sObjectId
+			});
 		}
 	});
 }

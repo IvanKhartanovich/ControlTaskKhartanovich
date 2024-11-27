@@ -19,7 +19,6 @@
                     />
                 </HBox>
                 <OverflowToolbar>
-                    <Title text="Product List" />
                     <ToolbarSpacer />
                     <Button
                         text="Information"
@@ -29,6 +28,10 @@
                     <Button
                         text="Show ID"
                         press="onShowSelectedRow"
+                    />
+                    <Button
+                        text="Go to object"
+                        press="onGoPress"
                     />
                 </OverflowToolbar>
                 <table:Table
