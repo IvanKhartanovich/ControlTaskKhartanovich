@@ -26,6 +26,10 @@
                         icon="sap-icon://hint"
                         press="onShowMessage"
                     />
+                    <Button
+                        text="Show ID"
+                        press="onShowSelectedRow"
+                    />
                 </OverflowToolbar>
                 <table:Table
                     id="worklistTable"

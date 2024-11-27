@@ -40,10 +40,21 @@ sap.ui.define([
 			this._searchHandler('MaterialText', FilterOperator.Contains, sValue);
 		},
 		onShowMessage: function () {
-			// Открываем MessageBox с данными студента
 			MessageBox.alert("Khartanovich Ivan", {
 				title: "Info"
 			});
+		},
+		onShowSelectedRow: function () {
+			var oTable = this.byId("worklistTable");
+			var aSelectedIndices = oTable.getSelectedIndices();
+			if (aSelectedIndices.length === 0) {
+				MessageBox.warning("Please, select something.");
+				return;
+			}
+			var iSelectedIndex = aSelectedIndices[0];
+			var oContext = oTable.getContextByIndex(iSelectedIndex);
+			var sMaterialID = oContext.getProperty("MaterialID");
+			MessageBox.information(sMaterialID);
 		}
 	});
 }
